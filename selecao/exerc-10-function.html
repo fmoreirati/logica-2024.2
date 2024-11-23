@@ -1,0 +1,36 @@
+<script>
+    //10) Escreva um programa para ler 3 valores inteiros (considere que não serão lidos valores iguais) e escrevê-los em ordem crescente. 
+
+    //entrada
+    let valor1 = parseInt(prompt("Digite primeiro valor"))
+    let valor2 = parseInt(prompt("Digite segundo valor"))
+    let valor3 = parseInt(prompt("Digite terceiro valor"))
+
+    //processamento
+
+    function ordemCrescente(valor1, valor2, valor3) {
+        let tempValor = 0
+        if (valor1 > valor3) {
+            tempValor = valor1
+            valor1 = valor3
+            valor3 = tempValor
+        }
+        if (valor2 > valor3) {
+            tempValor = valor3
+            valor3 = valor2
+            valor2 = tempValor
+        }
+
+        if (valor1 > valor2) {
+            tempValor = valor2
+            valor2 = valor1
+            valor1 = tempValor
+        }
+        return [valor1, valor2, valor3]
+    }
+
+    //saida
+    let resposta = ordemCrescente(valor1, valor2, valor3)
+    document.write("Em ordem:" + resposta)
+
+</script>
