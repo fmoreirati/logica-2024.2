@@ -1,0 +1,26 @@
+<script>
+    //76) Construa um algoritmo que leia 50 valores inteiros e positivos e:
+    // · Encontre o maior valor
+    // · Encontre o menor valor
+    // · Calcule a média dos números lidos
+
+    //entrada
+    let maior = 0;
+    let menor = Infinity;
+    let soma = 0;
+    let limite = 50
+    //processamento
+    for (let cont = 1; cont <= limite; cont++) {
+        let valor = parseInt(prompt("Digite um valor"))
+        if (valor > maior) {
+            maior = valor
+        }
+        if (valor < menor) {
+            menor = valor
+        }
+        soma += valor // soma = soma + valor
+    }
+    let media = soma / limite
+    //saida
+    document.write(`Maior: ${maior} | Menor: ${menor} | Media: ${media}`)
+</script>

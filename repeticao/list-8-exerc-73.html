@@ -1,0 +1,15 @@
+<script>
+    //73) Faça um algoritmo que determine o maior entre N números. A condição de parada é a entrada de um valor 0, ou seja, o algoritmo deve processar o maior até que a entrada seja igual a 0(ZERO).
+    let maior = 0;
+    let numero = -1;
+    while (numero != 0) {
+        //entrada
+        numero = parseFloat(prompt("digite um numero"))
+        //processamento
+        if (numero > maior) {
+            maior = numero
+        }
+    }
+    //saida
+    document.write("O maior numero: " + maior + "<br>")
+</script>
