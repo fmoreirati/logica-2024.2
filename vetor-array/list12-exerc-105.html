@@ -1,0 +1,18 @@
+<script>
+    //105) Escreva um algoritmo em pseudocodigo para ler um vetor de tamanho 10 e escreva a posição de cada elemento com valor igual a 25 neste vetor.
+
+    let elementos = []
+    let resposta = ''
+    //entrada
+    for (let index = 0; index < 10; index++) {
+        elementos[index] = parseInt(prompt("Digite um valor"))
+        //processamento
+        if (elementos[index] == 25) {
+            resposta += `${index}, `
+        }
+    }
+    //saida
+    document.write(`posição encontrada(s): ${resposta}`)
+
+
+</script>
