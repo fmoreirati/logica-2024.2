@@ -1,0 +1,85 @@
+<meta charset="utf-8">
+
+<script>
+    /*
+    Enunciado: Sistema de Conta Bancária    
+    Você deve implementar um sistema de gerenciamento de contas bancárias. O sistema deve permitir a criação de contas, depósitos, retiradas e a consulta do saldo. Além disso, o sistema deve gerenciar contas de diferentes tipos, como contas correntes e contas poupança.
+    
+    Sistema Conta:
+    A Conta deve ter os seguintes atributos:
+    - titular (String): nome do titular da conta.
+    - saldo (Float): o saldo atual da conta (inicialmente 0).
+    - tipo (String): tipo da conta (por exemplo, "corrente" ou "poupança").
+    
+    Métodos(funções):
+    - depositar(valor: float): Adiciona um valor ao saldo da conta.
+    - retirar(valor: float): Subtrai um valor do saldo da conta, desde que haja saldo suficiente. Caso contrário, exibe uma mensagem de erro.
+    - consultar_saldo(): Retorna o saldo atual da conta.
+    - exibir_dados(): Exibe os dados da conta, incluindo o titular, saldo e tipo.
+    
+    Funcionalidades adicionais:
+    Permitir que o usuário crie contas e realize operações (depósito, retirada) através de um menu interativo.
+    Validar o valor dos depósitos e retiradas, assegurando que não sejam negativos.
+    */
+    let conta = {
+        titular: "Fabiano",
+        saldo: 1000,
+        tipo: "corrente" // "corrente" ou "poupança"
+    }
+
+    function depositar(valor) {
+        return conta.saldo = conta.saldo + valor
+    }
+
+    function retirar(valor) {
+        if (valor < conta.saldo) {
+            return conta.saldo = conta.saldo - valor
+        }
+        return conta.saldo
+    }
+
+    function consultar_saldo() {
+        return conta.saldo
+    }
+
+    function exibir_dados() {
+        return conta
+    }
+
+    function menu() {
+        let opcao = -1
+        while (opcao != 0) {
+            opcao = prompt(`
+            Titular: ${conta.titular} | Saldo: ${conta.saldo}
+            [1] - Deposito
+            [2] - Saque
+            [3] - Saldo
+            [4] - Exibir Dados
+            [0] - Sair
+        `)
+            if (opcao == 1) {
+                let valor = parseFloat(prompt("Valor do Deposito?"))
+                conta.saldo = depositar(valor)
+                alert(`Saldo: ${conta.saldo}`)
+            }
+            if (opcao == 2) {
+                let valor = parseFloat(prompt("Valor do Saque?"))
+                if (valor < conta.saldo) {
+                    conta.saldo = retirar(valor)
+                    alert(`Saldo: ${conta.saldo}`)
+                } else {
+                    alert(`Saldo insuficiente!`)
+                }
+            }
+            if (opcao == 3) {
+                alert(`Saldo: ${consultar_saldo()}`)
+            }
+            if (opcao == 4) {
+                let dados = exibir_dados()
+                alert(`Dados: ${dados.titular, dados.saldo, dados.tipo}`)
+            }
+        }
+    }
+
+    menu()
+</script>
